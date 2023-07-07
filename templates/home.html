@@ -2,52 +2,35 @@
 <html>
   <head>
     <title>Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(182, 50, 100);
-        text-align: center;
-      }
-      h2{
-        font-size: 32px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;
-      }
-      
-      .bodytext{
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-      #banner {
+      #banner{
         width: 100%;
-        height: 360px;
-        object-fit: cover;        
+        height: 380px;
+        object-fit: cover;
       }
-      #container{
-        max-width: 720px;
-        margin: 0 auto 0 auto;
-      }
-
-      
     </style>
+    
   </head>
   <body>
-    <div id="container">
-       <h1>Jovian Careers</h1>
-    <img id="banner" src="https://jovian-careers-website--audreypadere.repl.co/static/passion.jpg" >
-    <h2>About Jovian</h2>
-    <p class="bodytext">
+    <div class="container">
+       <h1 class="text-center mt-4 mb-2">Jovian Careers</h1>
+    <img class="img-fluid" id= "banner"  src="https://jovian-careers-website--audreypadere.repl.co/static/passion.jpg" >
+    <h2 class="text-center mt-4 mb-2">About Jovian</h2>
+    <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO - Show the job details</p>
+    <h2 class="text-center mt-4 mb-2">Open Positions</h2>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
       <div style="text-align:center;">
-        <button>Contact Us</button>
-        <p>Copyright 2022, Jovian</p>
+        <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
+        <p clas="mt-4">Copyright 2022, Jovian</p>
       </div>
     
     </div>
